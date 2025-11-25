@@ -4,11 +4,18 @@ A Spring Boot REST application created for **Inlämningsuppgift 2** in the cours
 The system manages **customers** and their **vehicles** using Spring Data JPA, DTOs, and a file-based H2 database.
 
 ---
+## 📦 Getting Started
+1. Clone the Repository 
+   First, clone this project to your local machine:
+-
+   git clone https://github.com/sharinacl/inl2-spring-jpa.git
+2. Navigate to the Project Folder
+-
+   cd inl2-spring-jpa
 
 ## 🚀 **How to Run the Project**
 
-You can start the project using the included scripts — this is the easiest way for teachers and reviewers.
-
+You can start the project using the included scripts
 ---
 
 ## 🟦 **Windows (run.bat)**
