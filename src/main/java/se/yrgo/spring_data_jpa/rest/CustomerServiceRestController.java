@@ -56,7 +56,8 @@ public class CustomerServiceRestController {
     }
 
     @PostMapping("/customers")
-    public ResponseEntity<String> addCustomer(@RequestParam String name, @RequestParam String phone) {
+    public ResponseEntity<String> addCustomer(@RequestParam String name,
+                                              @RequestParam String phone) {
         Customer customer = new Customer();
         customer.setName(name);
         customer.setPhoneNumber(phone);
@@ -65,9 +66,15 @@ public class CustomerServiceRestController {
     }
 
     @PostMapping("/vehicles")
-    public ResponseEntity<String> addVehicle(@RequestParam String registrationNumber) {
+    public ResponseEntity<String> addVehicle(@RequestParam String registrationNumber,
+                                             @RequestParam String brand,
+                                             @RequestParam String model,
+                                             @RequestParam int productionYear) {
         Vehicle vehicle = new Vehicle();
         vehicle.setRegistrationNumber(registrationNumber);
+        vehicle.setBrand(brand);
+        vehicle.setModel(model);
+        vehicle.setProductionYear(productionYear);
         vehicleRepository.save(vehicle);
         return ResponseEntity.ok().body("Vehicle added successfully!");
     }
@@ -78,11 +85,13 @@ public class CustomerServiceRestController {
         Vehicle vehicle= vehicleRepository.findById(vehicleId).orElse(null);
 
         if (customer != null && vehicle != null) {
+            vehicle.setCustomer(customer);
             customer.getVehicles().add(vehicle);
-            customerRepository.save(customer);
+            vehicleRepository.save(vehicle);
+//            customerRepository.save(customer);
             return ResponseEntity.ok().body("Vehicle assigned successfully to the customer!");
         } else {
-            return ResponseEntity.badRequest().body("Customer not found!");
+            return ResponseEntity.badRequest().body("Customer or vehicle not found!");
         }
 
     }

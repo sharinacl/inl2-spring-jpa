@@ -19,7 +19,6 @@ public class Customer {
 
     @JsonIgnore
     @OneToMany(mappedBy = "customer")
-
     private List<Vehicle> vehicles = new ArrayList<>();
 
     public Customer() {}

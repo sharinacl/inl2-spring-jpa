@@ -27,6 +27,13 @@ public class Vehicle {
         this.productionYear = productionYear;
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
     public Long getId() {
         return id;
     }
