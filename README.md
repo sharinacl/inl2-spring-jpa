@@ -1,6 +1,6 @@
 # **Spring Data JPA – Customer & Vehicle REST API**
 
-A Spring Boot REST application created for **Inlämningsuppgift 2** in the course *Backendutveckling 2* at Yrgo.
+A Spring Boot REST application created for **Inlämningsuppgift 2** in the course *Backendprogrammering del 2* at Yrgo.
 The system manages **customers** and their **vehicles** using Spring Data JPA, DTOs, and a file-based H2 database.
 
 ---
